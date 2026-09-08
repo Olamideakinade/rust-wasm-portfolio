@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Alex Rivers | Rust & Systems Engineer</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Fira+Code:wght@400;600&family=Inter:wght@300;400;600;800&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="app-container">
+        <header class="navbar">
+            <div class="logo">AR<span>.rs</span></div>
+            <nav class="nav-links">
+                <button class="nav-btn" data-section="about">// about</button>
+                <button class="nav-btn" data-section="projects">// projects</button>
+                <button class="nav-btn" data-section="skills">// skills</button>
+                <button class="nav-btn" data-section="contact">// contact</button>
+            </nav>
+        </header>
+
+        <main class="main-content">
+            <section id="hero-section" class="hero">
+                <div class="hero-text">
+                    <span class="badge">STATUS: READY FOR DEPLOYMENT</span>
+                    <h1>Alex Rivers</h1>
+                    <p class="subtitle">Systems Architect & Rust Enthusiast</p>
+                    <p class="bio-snippet">
+                        Crafting high-performance web services, distributed systems, and compile-time safe applications.
+                    </p>
+                    <div class="cta-group">
+                        <button class="primary-btn" id="explore-btn">Explore Projects</button>
+                        <a href="#contact" class="secondary-btn">Get in Touch</a>
+                    </div>
+                </div>
+                <div class="hero-canvas-container">
+                    <canvas id="particle-canvas"></canvas>
+                </div>
+            </section>
+
+            <section id="content-section" class="dynamic-section">
+                <!-- Dynamically populated by Rust WebAssembly -->
+            </section>
+        </main>
+
+        <footer class="footer">
+            <p>&copy; 2025 Alex Rivers. Compiled with Rust & WebAssembly.</p>
+        </footer>
+    </div>
+
+    <script type="module">
+        import init from './pkg/rust_wasm_portfolio.js';
+        async function run() {
+            await init();
+        }
+        run();
+    </script>
+</body>
+</html>
